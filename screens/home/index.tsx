@@ -1,9 +1,13 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, StatusBar, View } from "react-native";
 
-export default function Home({ navigation }: any) {
+import Feed from "../../features/feed";
+const Home = ({ navigation }: any) => {
   return (
-    <SafeAreaView className="flex-1 vh-10  bg-white">
-      <Text>Home</Text>
+    <SafeAreaView className="bg-white">
+      <StatusBar />
+      <Feed />
     </SafeAreaView>
   );
-}
+};
+
+export default Home;
