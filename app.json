@@ -29,6 +29,12 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fdce503b-bd85-46c4-a225-42c6dceeff82"
+      }
+    },
+    "owner": "jarielbalberona"
   }
 }
