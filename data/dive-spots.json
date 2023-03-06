@@ -39,8 +39,8 @@
     "description": "A dive site with a vibrant coral garden and diverse marine life, including sea turtles, reef sharks, and schools of fish.",
     "geometry": {
       "location": {
-        "lat": 13.7207,
-        "lng": 120.8882
+        "lat": 13.7208,
+        "lng": 120.8883
       }
     },
     "icon": "",
@@ -99,8 +99,8 @@
     "description": "A drift dive site with strong currents that create a washing machine effect, offering the chance to spot pelagic species like sharks and rays.",
     "geometry": {
       "location": {
-        "lat": 8.0187,
-        "lng": 119.8953
+        "lat": 8.0188,
+        "lng": 119.8952
       }
     },
     "icon": "",

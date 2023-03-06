@@ -1,7 +1,5 @@
-import { View, Text, Pressable } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RootTabParamList, RootTabScreenProps } from "../../types";
-import { FontAwesome } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 
 import Home from "../../screens/home";
