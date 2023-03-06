@@ -20,7 +20,7 @@ export default function App() {
   } else {
     return (
       <ReactionProvider>
-        <SafeAreaProvider className="mt-6">
+        <SafeAreaProvider>
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
         </SafeAreaProvider>

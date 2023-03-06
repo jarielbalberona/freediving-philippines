@@ -1,0 +1,338 @@
+[
+  {
+    "description": "A macro diving site with plenty of critters to spot, including nudibranchs, seahorses, and pygmy seahorses.",
+    "geometry": {
+      "location": {
+        "lat": 13.6867,
+        "lng": 20.8857
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Secret Bay or Manit Muck"
+  },
+  {
+    "description": "A shallow dive site with a sandy bottom and plenty of artificial structures that have become home to various species of marine life.",
+    "geometry": {
+      "location": {
+        "lat": 13.7119,
+        "lng": 120.8881
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "The Pier"
+  },
+  {
+    "description": "A popular spot for macro diving and underwater photography, with a variety of colorful soft and hard corals.",
+    "geometry": {
+      "location": {
+        "lat": 13.7207,
+        "lng": 120.8882
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Twin Rocks"
+  },
+  {
+    "description": "A dive site with a vibrant coral garden and diverse marine life, including sea turtles, reef sharks, and schools of fish.",
+    "geometry": {
+      "location": {
+        "lat": 13.7207,
+        "lng": 120.8882
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Beatrice Rock"
+  },
+  {
+    "description": "A dive site with a unique underwater topography featuring towering rock formations and an abundance of fish.",
+    "geometry": {
+      "location": {
+        "lat": 13.7127,
+        "lng": 120.8902
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Cathedral Rock"
+  },
+  {
+    "description": "A small island with several dive sites around it, offering opportunities to spot reef sharks, sea turtles, and various species of fish.",
+    "geometry": {
+      "location": {
+        "lat": 13.6602,
+        "lng": 120.8872
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Sombrero Island, Mabini, Batangas"
+  },
+  {
+    "description": "A remote atoll with an abundance of marine life, including sharks, rays, and schools of fish.",
+    "geometry": {
+      "location": {
+        "lat": 11.6018,
+        "lng": 120.7535
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Apo Reef, Mindoro Occidental"
+  },
+  {
+    "description": "A dive site with a wall covered in colorful soft corals and an abundance of marine life.",
+    "geometry": {
+      "location": {
+        "lat": 8.0187,
+        "lng": 119.8953
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Amos Rock"
+  },
+  {
+    "description": "A drift dive site with strong currents that create a washing machine effect, offering the chance to spot pelagic species like sharks and rays.",
+    "geometry": {
+      "location": {
+        "lat": 8.0187,
+        "lng": 119.8953
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Washing Machine"
+  },
+  {
+    "description": "A site with a large rock formation covered in corals and home to various species of fish and sea turtles.",
+    "geometry": {
+      "location": {
+        "lat": 8.0217,
+        "lng": 119.8945
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Black Rock"
+  },
+  {
+    "description": "A unique dive site with a thermocline that creates a layer of warm water on top of colder water, offering a surreal diving experience.",
+    "geometry": {
+      "location": {
+        "lat": 11.9842,
+        "lng": 120.1912
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Barracuda Lake, Coron, Palawan"
+  },
+  {
+    "description": "A dive site with a sunken shipwreck covered in corals and home to various species of fish and other marine life.",
+    "geometry": {
+      "location": {
+        "lat": 11.9904,
+        "lng": 120.1941
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "East Tangat Wreck, Coron, Palawan"
+  },
+  {
+    "description": "A dive site with a vibrant coral garden and a variety of marine life, including sea turtles, lionfish, and colorful reef fish.",
+    "geometry": {
+      "location": {
+        "lat": 11.9855,
+        "lng": 120.1915
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Coral Garden, Coron, Palawan"
+  },
+  {
+    "description": "A dive site with a sunken gunboat covered in corals and home to various species of fish and other marine life.",
+    "geometry": {
+      "location": {
+        "lat": 12.0555,
+        "lng": 119.9785
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Lusong Gunboat Shipwreck, Coron, Palawan"
+  },
+  {
+    "description": "A dive site with a diverse underwater landscape featuring coral gardens, canyons, and walls, home to various species of fish and marine life",
+    "geometry": {
+      "location": {
+        "lat": 11.1506201,
+        "lng": 119.3072709
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "South Miniloc, El Nido, Palawan"
+  },
+  {
+    "description": "A dive site known for its regular sightings of thresher sharks, as well as other pelagic species like manta rays and devil rays.",
+    "geometry": {
+      "location": {
+        "lat": 11.3368,
+        "lng": 124.0725
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Monad Shoal, Malapascua, Cebu"
+  },
+  {
+    "description": "A popular dive destination with various dive sites, including artificial reefs and shipwrecks, home to a wide range of marine life.",
+    "geometry": {
+      "location": {
+        "lat": 10.2936,
+        "lng": 123.9766
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Mactan Island, Cebu"
+  },
+  {
+    "description": "A dive site famous for its massive schools of sardines, which form mesmerizing shoals that attract predators like sharks and jackfish.",
+    "geometry": {
+      "location": {
+        "lat": 9.9395,
+        "lng": 123.3765
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Panagsama Sardine Run, Moalboal, Cebu"
+  },
+  {
+    "description": "A dive site with a diverse underwater landscape featuring walls, tunnels, and canyons, home to a wide variety of marine life, including sea turtles and schools of fish.",
+    "geometry": {
+      "location": {
+        "lat": 9.8489,
+        "lng": 123.4998
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Pescador Island, Moalboal"
+  },
+  {
+    "description": "A marine sanctuary with a vibrant coral reef system and a diverse range of marine life, including sea turtles, reef sharks, and schools of fish.",
+    "geometry": {
+      "location": {
+        "lat": 9.5988,
+        "lng": 123.7669
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Balicasag Island, Bohol"
+  },
+  {
+    "description": "A shallow reef dive site with an abundance of marine life, including colorful corals, reef fish, and invertebrates.",
+    "geometry": {
+      "location": {
+        "lat": 9.7281,
+        "lng": 123.8695
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Napaling Reef, Bohol"
+  },
+  {
+    "description": "A muck diving site with a variety of critters to spot, including flamboyant cuttlefish, frogfish, and seahorses",
+    "geometry": {
+      "location": {
+        "lat": 9.1778,
+        "lng": 123.2589
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Dauin, Negros"
+  },
+  {
+    "description": "A dive site with a sunken pier covered in corals and home to various species of fish and other marine life.",
+    "geometry": {
+      "location": {
+        "lat": 9.1765,
+        "lng": 123.2445
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Old Bacong Pier, Dumaguete"
+  },
+  {
+    "description": "A marine sanctuary with a diverse range of marine life, including sea turtles, reef sharks, and schools of fish, as well as colorful corals and other invertebrates.",
+    "geometry": {
+      "location": {
+        "lat": 9.1013,
+        "lng": 123.2713
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Apo Island, Negros Oriental"
+  },
+  {
+    "description": "A marine sanctuary with a diverse range of marine life, including schools of fish like the popular barracuda, sea turtles, and colorful corals and invertebrates.",
+    "geometry": {
+      "location": {
+        "lat": 9.1919,
+        "lng": 123.5371
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Tulapos Marine Sanctuary, Siquijor"
+  },
+  {
+    "description": "A marine reserve with a diverse range of marine life, including reef sharks, sea turtles, and schools of fish, as well as pristine coral reefs.",
+    "geometry": {
+      "location": {
+        "lat": 9.6999,
+        "lng": 122.5678
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Danjugan Island, Negros Occidental"
+  },
+  {
+    "description": "Tuka Marine Park in Kiamba, Sarangani is a true marvel for everyone who finds joy in exploring the life underneath the seas.",
+    "geometry": {
+      "location": {
+        "lat": 5.9793498,
+        "lng": 124.6204228
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Tuka Marine Park and Beach Resort"
+  },
+  {
+    "description": "",
+    "geometry": {
+      "location": {
+        "lat": 8.9313203,
+        "lng": 125.0010772
+      }
+    },
+    "icon": "",
+    "image": "",
+    "title": "Japanese Coral Garden"
+  }
+]

@@ -11,7 +11,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ColorSchemeName } from "react-native";
-import ModalScreen from "../screens/modal";
+import ModalScreen from "../components/modal";
 import NotFoundScreen from "../screens/not-found";
 import {
   RootStackParamList,

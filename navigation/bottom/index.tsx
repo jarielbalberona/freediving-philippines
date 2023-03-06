@@ -5,13 +5,13 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 
 import Home from "../../screens/home";
-import Details from "../../screens/details";
+import MapSearchStackScreen from "../../screens/map-search";
 import SearchStackScreen from "../../navigation/search";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 const BottomTabNavigation = () => {
   return (
-    <BottomTab.Navigator initialRouteName="Home">
+    <BottomTab.Navigator initialRouteName="Map">
       <BottomTab.Screen
         name="Home"
         component={Home}
@@ -39,11 +39,12 @@ const BottomTabNavigation = () => {
         })}
       />
       <BottomTab.Screen
-        name="Details"
-        component={Details}
+        name="MapStack"
+        component={MapSearchStackScreen}
         options={{
-          title: "Freediving Search",
+          title: "Explore Freediving",
           tabBarShowLabel: false,
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
         }}
       />
