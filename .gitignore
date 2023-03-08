@@ -10,5 +10,7 @@ npm-debug.*
 *.orig.*
 web-build/
 yarn-error.log
+freediving-philippines-668b80d3e157.json
+freediving-380003-c8ace3d88f90.json
 # macOS
 .DS_Store

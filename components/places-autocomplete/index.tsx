@@ -7,7 +7,6 @@ const GooglePlacesAutocompleteInput = ({
   setSearchText,
   searchRef,
 }: any) => {
-  console.log("g auto", search);
   return (
     <View className="flex">
       <GooglePlacesAutocomplete

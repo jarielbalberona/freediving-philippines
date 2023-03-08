@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, FlatList } from "react-native";
-import Highlights from "../highlights";
-import Branding from "../../components/brand-header";
-import PostCard from "../../components/post-card";
+import { Text, View, FlatList, Image } from "react-native";
 
-const Feed = ({ navigation }: any) => {
+const HorizontalGallery = ({ navigation }: any) => {
   const [items, setItems] = useState([
     {
       id: "1",
@@ -48,22 +45,25 @@ const Feed = ({ navigation }: any) => {
     },
   ]);
   return (
-    <View className="flex mt-4">
+    <View className="flex mt-2">
       <FlatList
         data={items}
+        horizontal
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }: any) => <PostCard item={item} />}
-        keyExtractor={(item: any) => item.id}
-        ListHeaderComponent={() => (
-          <View className="mb-4">
-            <Branding />
-            <Highlights />
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }: any) => (
+          <View className="m-2">
+            <Image
+              className="w-36 h-36"
+              source={require("../../assets/icons/freediving-logo.png")}
+            />
           </View>
         )}
+        keyExtractor={(item: any) => item.id}
       />
     </View>
   );
 };
 
-export default Feed;
+export default HorizontalGallery;

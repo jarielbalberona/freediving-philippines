@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { Text, View, Image, StyleSheet } from "react-native";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
+import HorizontalGallery from "../../components/horizontal-gallery";
+import { Rating, AirbnbRating } from "react-native-ratings";
 
 const MapBottomSheet = ({
   bottomSheetRef,
@@ -8,7 +10,7 @@ const MapBottomSheet = ({
   locations,
   bottom_sheet_active_index,
 }: any) => {
-  const snapPoints = useMemo(() => ["40%", "95%"], []);
+  const snapPoints = useMemo(() => ["40%", "77%"], []);
   return (
     <BottomSheet
       ref={bottomSheetRef}
@@ -20,37 +22,33 @@ const MapBottomSheet = ({
       <BottomSheetFlatList
         data={locations}
         keyExtractor={(i: any) => i.geometry.location.lat}
-        contentContainerStyle={
-          bottom_sheet_active_index === 1
-            ? styles.contentContainerOpen
-            : styles.contentContainerClosed
-        }
         renderItem={({ item }: any) => (
-          <View className="flex flex-row items-center pb-4 m-2 shadow-md">
-            <View className="pr-2">
-              <Image
-                className="w-16 h-16"
-                source={require("../../assets/icons/freediving-logo.png")}
-              />
-            </View>
+          <View>
             <View className="pl-2 mr-20 ">
               <Text className="text-base font-medium">{item.title}</Text>
               <Text className="text-sm">{item.description}</Text>
             </View>
+            <View className="mt-2">
+              <View className="flex w-32 ">
+                <Rating
+                  type="heart"
+                  ratingCount={5}
+                  imageSize={24}
+                  startingValue={5}
+                  readonly
+                  onFinishRating={() => console.log("rating completed")}
+                />
+              </View>
+            </View>
+            <View className="mt-0">
+              <HorizontalGallery />
+            </View>
+            <View className="w-full h-2 my-2 bg-slate-100"></View>
           </View>
         )}
       />
     </BottomSheet>
   );
 };
-
-const styles = StyleSheet.create({
-  contentContainerOpen: {
-    marginTop: 110,
-  },
-  contentContainerClosed: {
-    marginTop: 0,
-  },
-});
 
 export default MapBottomSheet;

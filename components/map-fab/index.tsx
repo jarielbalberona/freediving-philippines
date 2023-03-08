@@ -4,11 +4,7 @@ import { Fontisto } from "@expo/vector-icons";
 const MapFAB = ({ handleTap }: any) => {
   return (
     <Pressable
-      onPress={() => {
-        handleTap();
-        console.log("handleTap", handleTap);
-        console.log("tapp?");
-      }}
+      onPress={handleTap}
       className="absolute flex flex-row items-center justify-center w-auto h-12 p-2 px-4 bg-white rounded-xl right-4 bottom-4"
     >
       <Fontisto

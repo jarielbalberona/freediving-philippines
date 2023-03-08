@@ -35,7 +35,13 @@ const MapSearch = () => {
   const [bottom_sheet_active_index, setBottomSheetActiveIndex] = useState(1);
 
   useEffect(() => {
-    setLocations(DiveSpots);
+    const location_ids = [11, 12, 14, 18, 20, 21, 22, 23, 24];
+
+    let filtered_locations = DiveSpots.filter((item) => {
+      return location_ids.indexOf(item.id) === -1;
+    });
+
+    setLocations(filtered_locations);
     if (route.params?.category_id) {
       const { category_id } = route.params;
       const category = SearchCategories.find((item) => item.id === category_id);
@@ -81,7 +87,7 @@ const MapSearch = () => {
         rotateEnabled={false}
         pitchEnabled={false}
         scrollDuringRotateOrZoomEnabled={false}
-        onRegionChange={async (region, details) => {
+        onRegionChange={async (region: any, details: any) => {
           console.log("region", region);
           console.log("details", details);
         }}
@@ -115,12 +121,13 @@ const MapSearch = () => {
       </MapView>
 
       <View
-        className={`absolute z-10 flex w-full p-2 top-14 transition ease-in-out delay-150 duration-300  ${
+        className={`absolute z-10 flex w-full px-2 pt-4 top-14 transition ease-in-out delay-150 duration-300  ${
           bottom_sheet_active_index === 1 ? "bg-white" : ""
         }`}
       >
         <View>
           <TextInput
+            readonly
             className="block w-full h-12 px-4 bg-white border border-gray-300 rounded-full shadow-sm sm:text-sm"
             value={search}
             onChangeText={setSearch}
@@ -152,19 +159,17 @@ const MapSearch = () => {
           showsHorizontalScrollIndicator={false}
           className="overflow-hidden"
         >
-          {search === "" ? (
-            <View className="flex flex-row m-2">
-              {SearchCategories.map((item) => (
-                <Pressable
-                  key={item.id}
-                  onPress={() => setSearch(item.name)}
-                  className="p-3 m-1 bg-white shadow-sm rounded-3xl"
-                >
-                  <Text>{item.name}</Text>
-                </Pressable>
-              ))}
-            </View>
-          ) : null}
+          <View className="flex flex-row m-2">
+            {SearchCategories.map((item) => (
+              <Pressable
+                key={item.id}
+                onPress={() => setSearch(item.name)}
+                className="p-3 m-1 bg-white shadow-sm rounded-3xl"
+              >
+                <Text>{item.name}</Text>
+              </Pressable>
+            ))}
+          </View>
         </ScrollView>
       </View>
       <MapBottomSheet
