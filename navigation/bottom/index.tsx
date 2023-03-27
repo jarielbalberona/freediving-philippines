@@ -3,7 +3,7 @@ import { RootTabParamList, RootTabScreenProps } from "../../types";
 import { Fontisto } from "@expo/vector-icons";
 
 import Home from "../../screens/home";
-import MapSearchStackScreen from "../../screens/map-search";
+import MapSearchStackScreen from "../../navigation/map-search";
 import SearchStackScreen from "../../navigation/search";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();

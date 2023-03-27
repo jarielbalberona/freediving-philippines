@@ -13,5 +13,15 @@
     "id": "b13",
     "name": "Shem Cuaco",
     "services": ["Buddy", "Videographer", "Colorist"]
+  },
+  {
+    "id": "b14",
+    "name": "Jariel Balberona",
+    "services": ["Buddy", "Videographer", "Colorist"]
+  },
+  {
+    "id": "b15",
+    "name": "Harvey Belandres",
+    "services": ["Buddy", "Videographer", "Colorist"]
   }
 ]

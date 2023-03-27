@@ -124,7 +124,10 @@ const MapSearch = () => {
             icon={{
               uri: "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/icons/map-marker@3x.png",
             }}
-            onPress={() => setSelectedLocation([location])}
+            onPress={() => {
+              bottomSheetRef.current?.snapToIndex(0);
+              setSelectedLocation([location]);
+            }}
           />
         ))}
       </MapView>

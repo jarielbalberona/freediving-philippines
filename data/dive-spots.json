@@ -1,6 +1,6 @@
 [
   {
-    "buddies": [],
+    "buddies": ["b11", "b12", "b13", "b14", "b15"],
     "description": "A macro diving site with plenty of critters to spot, including nudibranchs, seahorses, and pygmy seahorses.",
     "geometry": {
       "location": {
@@ -14,7 +14,7 @@
     "title": "Secret Bay or Manit Muck"
   },
   {
-    "buddies": [],
+    "buddies": ["b11", "b12", "b13"],
     "description": "A shallow dive site with a sandy bottom and plenty of artificial structures that have become home to various species of marine life.",
     "geometry": {
       "location": {
@@ -28,7 +28,7 @@
     "title": "The Pier"
   },
   {
-    "buddies": [],
+    "buddies": ["b11", "b12"],
     "description": "A popular spot for macro diving and underwater photography, with a variety of colorful soft and hard corals.",
     "geometry": {
       "location": {

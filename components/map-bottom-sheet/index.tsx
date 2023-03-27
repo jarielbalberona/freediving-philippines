@@ -1,8 +1,9 @@
-import { useMemo } from "react";
-import { Text, View } from "react-native";
+import { useMemo, useEffect } from "react";
+import { Text, View, TouchableOpacity } from "react-native";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
 import HorizontalGallery from "../../components/horizontal-gallery";
-import { Rating, AirbnbRating } from "react-native-ratings";
+import { Rating } from "react-native-ratings";
+import { useNavigation } from "@react-navigation/native";
 
 const MapBottomSheet = ({
   bottomSheetRef,
@@ -10,7 +11,13 @@ const MapBottomSheet = ({
   locations,
   bottom_sheet_active_index,
 }: any) => {
+  const navigation = useNavigation() as any;
   const snapPoints = useMemo(() => ["48%", "78%"], []);
+
+  useEffect(() => {
+    console.log("navigation", navigation.getState());
+  }, [navigation]);
+
   return (
     <BottomSheet
       ref={bottomSheetRef}
@@ -48,16 +55,45 @@ const MapBottomSheet = ({
             <View className="flex w-full mt-0">
               <HorizontalGallery />
             </View>
-            <View>
+            <View className="">
               <View className="mx-2">
                 <Text className="text-lg">Buddies</Text>
               </View>
-              <View className="flex flex-row m-2">
-                {item.buddies.map((buddy: any) => (
-                  <View className="px-4 py-2 mr-2 rounded-full bg-slate-800">
+              <View className="flex flex-row flex-wrap m-2 ">
+                {item.buddies.slice(0, 3).map((buddy: any) => (
+                  <View
+                    key={buddy.id}
+                    className="flex flex-row items-center w-auto px-4 py-2 my-1 ml-0 mr-1 rounded-full bg-slate-800 "
+                  >
                     <Text className="text-white">{buddy?.name}</Text>
+                    <View className="flex flex-row items-center ml-2">
+                      <Rating
+                        type="star"
+                        ratingBackgroundColor="red"
+                        ratingColor="red"
+                        tintColor="rgb(30, 41, 59)"
+                        ratingCount={1}
+                        imageSize={24}
+                        startingValue={5}
+                        readonly
+                        onFinishRating={() => console.log("rating completed")}
+                      />
+                      <Text className="text-white">4.5</Text>
+                    </View>
                   </View>
                 ))}
+                {item.buddies.length > 3 ? (
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.navigate("MapStack", {
+                        screen: "BuddiesStack",
+                      });
+                    }}
+                    className="flex flex-row items-center w-auto px-4 py-2 my-1 ml-0 mr-1 rounded-full bg-slate-800 "
+                  >
+                    <Text className="text-white">View All +</Text>
+                  </TouchableOpacity>
+                ) : null}
               </View>
             </View>
             <View className="w-full h-2 my-2 bg-slate-100"></View>
