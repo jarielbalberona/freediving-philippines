@@ -7,7 +7,8 @@ const Highlights = () => {
     {
       name: "Dive spots",
       description_short: "Explore the oceans",
-      image: "https://images.unsplash.com/photo-1573378617548-c82dd01a3fb0",
+      image:
+        "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-1.jpg",
       width: "w-3/5",
       title_size: "text-xl",
       navigate_details: {
@@ -18,7 +19,8 @@ const Highlights = () => {
     {
       name: "Buddies",
       description_short: "Never dive alone",
-      image: "https://images.unsplash.com/photo-1665682597003-f31e65b59efd",
+      image:
+        "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-2.jpg",
       width: "w-2/5",
       title_size: "text-xl",
       navigate_details: {
@@ -29,7 +31,8 @@ const Highlights = () => {
     {
       name: "Creators",
       description_short: null,
-      image: "https://images.unsplash.com/photo-1674786272813-dd04d4843752",
+      image:
+        "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-3.jpg",
       width: "w-4/12",
       title_size: "text-sm",
       navigate_details: {
@@ -40,7 +43,8 @@ const Highlights = () => {
     {
       name: "Marketplace",
       description_short: null,
-      image: "https://images.unsplash.com/photo-1583022816895-319291f05079",
+      image:
+        "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-4.jpg",
       width: "w-4/12",
       title_size: "text-sm",
       navigate_details: {
@@ -51,7 +55,8 @@ const Highlights = () => {
     {
       name: "Community",
       description_short: null,
-      image: "https://images.unsplash.com/photo-1669469053207-f2d5b1a8fd59",
+      image:
+        "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-5.jpg",
       width: "w-4/12",
       title_size: "text-sm",
       navigate_details: {

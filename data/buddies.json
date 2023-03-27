@@ -1,0 +1,17 @@
+[
+  {
+    "id": "b11",
+    "name": "Arbin Castillon Jr.",
+    "services": ["Buddy", "Photographer", "Videographer", "Colorist"]
+  },
+  {
+    "id": "b12",
+    "name": "Darb Dan",
+    "services": ["Buddy"]
+  },
+  {
+    "id": "b13",
+    "name": "Shem Cuaco",
+    "services": ["Buddy", "Videographer", "Colorist"]
+  }
+]

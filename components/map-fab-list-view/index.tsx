@@ -1,7 +1,7 @@
 import { Text, Pressable } from "react-native";
 import { Fontisto } from "@expo/vector-icons";
 
-const MapFAB = ({ handleTap }: any) => {
+const MapFABListView = ({ handleTap }: any) => {
   return (
     <Pressable
       onPress={handleTap}
@@ -18,4 +18,4 @@ const MapFAB = ({ handleTap }: any) => {
   );
 };
 
-export default MapFAB;
+export default MapFABListView;

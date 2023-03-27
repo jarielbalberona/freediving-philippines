@@ -23,6 +23,17 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {},
+      "android": { "track": "internal", "releaseStatus": "draft" }
+    },
+    "preview": {
+      "ios": {},
+      "android": { "track": "internal", "releaseStatus": "draft" }
+    },
+    "development": {
+      "ios": {},
+      "android": { "track": "internal", "releaseStatus": "draft" }
+    }
   }
 }

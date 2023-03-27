@@ -7,7 +7,7 @@ dotenv.config();
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: "Freediving",
-  version: "1.0.0",
+  version: "1.0.2",
   slug: "freediving",
   description:
     "Connect with fellow freedivers, find buddies, training centers, and diving spots in the Philippines",
@@ -31,9 +31,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: "./assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
+    versionCode: 4,
     package: "com.jarielbalberona.freediving",
   },
   web: {

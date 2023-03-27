@@ -1,27 +1,16 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
-  useCallback,
-} from "react";
-import {
-  Text,
-  Pressable,
-  View,
-  TextInput,
-  ScrollView,
-  Image,
-  StyleSheet,
-} from "react-native";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { Text, Pressable, View, TextInput, ScrollView } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import MapView, { Marker } from "react-native-maps";
 import { useRoute } from "@react-navigation/native";
 import { SearchCategories } from "../../constants/categories";
 import { MapStyle } from "../../constants/map-style";
 import DiveSpots from "../../data/dive-spots.json";
+import Buddies from "../../data/buddies.json";
 import { Fontisto } from "@expo/vector-icons";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
-import MapFAB from "../../components/map-fab";
+import MapFABListView from "../../components/map-fab-list-view";
+import MapFABShowAll from "../../components/map-fab-show-all";
 import MapBottomSheet from "../../components/map-bottom-sheet";
 
 const MapSearch = () => {
@@ -31,17 +20,33 @@ const MapSearch = () => {
   const route = useRoute() as any;
 
   const [search, setSearch] = useState<string>("");
+  const [backup_locations, setBackupLocations] = useState<any>([]);
   const [locations, setLocations] = useState<any>([]);
   const [bottom_sheet_active_index, setBottomSheetActiveIndex] = useState(1);
+  const [selected_location, setSelectedLocation] = useState([]) as any;
 
   useEffect(() => {
-    const location_ids = [11, 12, 14, 18, 20, 21, 22, 23, 24];
+    const location_ids = [18, 20, 21, 22, 23, 24];
 
-    let filtered_locations = DiveSpots.filter((item) => {
-      return location_ids.indexOf(item.id) === -1;
+    let filtered_locations = DiveSpots.filter(({ id }) =>
+      location_ids.includes(id)
+    );
+
+    filtered_locations = DiveSpots.map((location) => {
+      let buddies = [] as any;
+      let buddied_location = {
+        ...location,
+      } as any;
+
+      location.buddies.forEach((buddy_id) => {
+        buddies.push(Buddies.find((buddy) => buddy.id === buddy_id));
+      });
+      buddied_location.buddies = buddies;
+      return buddied_location;
     });
 
     setLocations(filtered_locations);
+    setBackupLocations(filtered_locations);
     if (route.params?.category_id) {
       const { category_id } = route.params;
       const category = SearchCategories.find((item) => item.id === category_id);
@@ -79,6 +84,11 @@ const MapSearch = () => {
   };
   return (
     <View className="relative flex w-full h-full">
+      <StatusBar
+        backgroundColor={
+          bottom_sheet_active_index === 1 ? "white" : "transparent"
+        }
+      />
       <MapView
         provider="google"
         className="z-0 w-full h-full"
@@ -87,10 +97,7 @@ const MapSearch = () => {
         rotateEnabled={false}
         pitchEnabled={false}
         scrollDuringRotateOrZoomEnabled={false}
-        onRegionChange={async (region: any, details: any) => {
-          console.log("region", region);
-          console.log("details", details);
-        }}
+        onRegionChange={async (region: any, details: any) => {}}
         ref={mapRef}
         region={{
           latitude: 12.892777045049678,
@@ -98,6 +105,7 @@ const MapSearch = () => {
           latitudeDelta: 20.40915917820612,
           longitudeDelta: 10.050340779125662,
         }}
+        showsUserLocation={true}
         onPress={() => {
           setMapBounding();
         }}
@@ -113,22 +121,21 @@ const MapSearch = () => {
               latitude: location.geometry.location.lat,
               longitude: location.geometry.location.lng,
             }}
-            title={location.title}
-            description={location.description}
-            icon={require("../../assets/icons/map-marker.png")}
+            icon={{
+              uri: "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/icons/map-marker@3x.png",
+            }}
+            onPress={() => setSelectedLocation([location])}
           />
         ))}
       </MapView>
 
       <View
-        className={`absolute z-10 flex w-full px-2 pt-4 top-14 transition ease-in-out delay-150 duration-300  ${
-          bottom_sheet_active_index === 1 ? "bg-white" : ""
-        }`}
+        className={`absolute z-10 flex w-full px-2 pt-4 top-10 transition ease-in-out delay-150 duration-300`}
       >
         <View>
           <TextInput
-            readonly
-            className="block w-full h-12 px-4 bg-white border border-gray-300 rounded-full shadow-sm sm:text-sm"
+            editable={false}
+            className="block w-full h-12 px-4 text-black bg-white border border-gray-300 rounded-full shadow-sm sm:text-sm"
             value={search}
             onChangeText={setSearch}
             placeholder="Explore Freediving"
@@ -164,7 +171,7 @@ const MapSearch = () => {
               <Pressable
                 key={item.id}
                 onPress={() => setSearch(item.name)}
-                className="p-3 m-1 bg-white shadow-sm rounded-3xl"
+                className="p-3 m-1 bg-white border border-1 border-slate-200 rounded-3xl"
               >
                 <Text>{item.name}</Text>
               </Pressable>
@@ -173,14 +180,27 @@ const MapSearch = () => {
         </ScrollView>
       </View>
       <MapBottomSheet
-        locations={locations}
+        locations={selected_location.length ? selected_location : locations}
         bottomSheetRef={bottomSheetRef}
         handleSheetChanges={handleSheetChanges}
         bottom_sheet_active_index={bottom_sheet_active_index}
       />
       {bottom_sheet_active_index === -1 ? (
-        <MapFAB handleTap={() => bottomSheetRef.current?.snapToIndex(0)} />
-      ) : null}
+        <MapFABListView
+          handleTap={() => bottomSheetRef.current?.snapToIndex(0)}
+        />
+      ) : (
+        <>
+          {selected_location.length ? (
+            <MapFABShowAll
+              handleTap={() => {
+                bottomSheetRef.current?.snapToIndex(0);
+                setSelectedLocation([]);
+              }}
+            />
+          ) : null}
+        </>
+      )}
     </View>
   );
 };
