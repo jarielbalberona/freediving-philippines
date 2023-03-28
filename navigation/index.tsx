@@ -21,6 +21,8 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import DrawerScreen from "./drawer";
 import AuthNavigation from "./auth";
+import { supabase } from "../services/supabase";
+import { Session } from "@supabase/supabase-js";
 
 export default function Navigation({
   colorScheme,
@@ -44,11 +46,22 @@ export default function Navigation({
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-  const [auth_token, setAuthToken] = useState(true);
+  const [session, setSession] = useState<Session | null>(null);
+
+  useEffect(() => {
+    console.log("session", session);
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
 
   return (
     <Stack.Navigator>
-      {auth_token ? (
+      {session && session.user ? (
         <Stack.Screen
           name="Root"
           component={DrawerScreen}

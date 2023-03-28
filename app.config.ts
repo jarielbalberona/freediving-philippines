@@ -44,6 +44,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId: "75c1a6d7-fde6-4ab8-b29a-f7f0ba7d668d",
     },
     apiUrl: process.env.API_URL,
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
   },
   owner: "jarielbalberona",
   runtimeVersion: {

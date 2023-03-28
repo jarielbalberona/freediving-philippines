@@ -140,7 +140,7 @@
     "title": "Black Rock"
   },
   {
-    "buddies": [],
+    "buddies": ["b11", "b12", "b13", "b14", "b15"],
     "description": "A unique dive site with a thermocline that creates a layer of warm water on top of colder water, offering a surreal diving experience.",
     "geometry": {
       "location": {
@@ -238,7 +238,7 @@
     "title": "Mactan Island, Cebu"
   },
   {
-    "buddies": ["b11"],
+    "buddies": ["b11", "b12", "b13", "b14", "b15"],
     "description": "A dive site famous for its massive schools of sardines, which form mesmerizing shoals that attract predators like sharks and jackfish.",
     "geometry": {
       "location": {
