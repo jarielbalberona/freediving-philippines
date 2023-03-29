@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RootTabParamList, RootTabScreenProps } from "../../types";
-import { Fontisto } from "@expo/vector-icons";
 
 import Home from "../../screens/home";
 import MapSearchStackScreen from "../../navigation/map-search";
 import SearchStackScreen from "../../navigation/search";
+import Icon from "../../components/icon";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 const BottomTabNavigation = () => {
@@ -17,7 +17,7 @@ const BottomTabNavigation = () => {
           title: "Freediving Philippines",
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="snorkel" color={color} />
+            <Icon name="diving-snorkel" color={color} />
           ),
           headerShown: false,
           // headerRight: () => (
@@ -43,7 +43,7 @@ const BottomTabNavigation = () => {
           title: "Explore Freediving",
           tabBarShowLabel: false,
           headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="map" color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -52,22 +52,12 @@ const BottomTabNavigation = () => {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="account" color={color} />,
           tabBarLabel: "Search",
         }}
       />
     </BottomTab.Navigator>
   );
 };
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof Fontisto>["name"];
-  color: string;
-}) {
-  return <Fontisto size={30} style={{ marginBottom: -3 }} {...props} />;
-}
 
 export default BottomTabNavigation;

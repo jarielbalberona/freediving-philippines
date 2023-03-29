@@ -36,9 +36,10 @@ export type RootTabParamList = {
   SearchStack: undefined;
   Search: undefined;
   Search2: undefined;
-  Splash: undefined;
   SignIn: undefined;
   SignUp: undefined;
+  Splash: undefined;
+  Authenticate: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =

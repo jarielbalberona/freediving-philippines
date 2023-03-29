@@ -1,12 +1,19 @@
 import { Text, Alert, StyleSheet, View, Button, TextInput } from "react-native";
 
-import React, { useState } from "react";
-import { supabase } from "../../services/supabase";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../../../services/supabase";
+import { useRoute } from "@react-navigation/native";
 
-const SignIn = ({ navigation }: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const SignIn = ({ navigation, screen }: any) => {
+  const route = useRoute();
+  const [username, setUsername] = useState("jarielbalberona");
+  const [email, setEmail] = useState("jariel@freediving.ph");
+  const [password, setPassword] = useState("Fph1568457291430!");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    console.log("screen", screen);
+  }, [screen]);
 
   async function signInWithEmail() {
     setLoading(true);
@@ -32,7 +39,20 @@ const SignIn = ({ navigation }: any) => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
+      {screen === "SignUp" ? (
+        <View style={[styles.verticallySpaced, styles.mt20]}>
+          <TextInput
+            className="block w-full h-12 px-4 text-black bg-white border border-gray-300 rounded-full shadow-sm sm:text-sm"
+            value={username}
+            onChangeText={(text: any) => setUsername(text)}
+            placeholder="username"
+            autoCapitalize="none"
+          />
+        </View>
+      ) : (
+        <View></View>
+      )}
+      <View style={styles.verticallySpaced}>
         <TextInput
           className="block w-full h-12 px-4 text-black bg-white border border-gray-300 rounded-full shadow-sm sm:text-sm"
           value={email}
@@ -50,20 +70,23 @@ const SignIn = ({ navigation }: any) => {
           autoCapitalize="none"
         />
       </View>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Button
-          title="Sign in"
-          disabled={loading}
-          onPress={() => signInWithEmail()}
-        />
-      </View>
-      <View style={styles.verticallySpaced}>
-        <Button
-          title="Sign up"
-          disabled={loading}
-          onPress={() => signUpWithEmail()}
-        />
-      </View>
+      {screen === "SignIn" ? (
+        <View style={[styles.verticallySpaced, styles.mt20]}>
+          <Button
+            title="Sign in"
+            disabled={loading}
+            onPress={() => signInWithEmail()}
+          />
+        </View>
+      ) : (
+        <View style={styles.verticallySpaced}>
+          <Button
+            title="Sign up"
+            disabled={loading}
+            onPress={() => signUpWithEmail()}
+          />
+        </View>
+      )}
     </View>
   );
 };
