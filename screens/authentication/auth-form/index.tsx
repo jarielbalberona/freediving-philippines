@@ -1,7 +1,7 @@
 import { Text, Alert, StyleSheet, View, Button, TextInput } from "react-native";
 
 import React, { useState, useEffect } from "react";
-import { supabase } from "../../../services/supabase";
+import { supabase, googleSignInWithExpo } from "../../../services/supabase";
 import { useRoute } from "@react-navigation/native";
 
 const SignIn = ({ navigation, screen }: any) => {
@@ -34,6 +34,26 @@ const SignIn = ({ navigation, screen }: any) => {
     });
     console.log("error", error);
     if (error) Alert.alert(error.message);
+    setLoading(false);
+  }
+
+  async function signInWithGoogle() {
+    setLoading(true);
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        queryParams: {
+          access_type: "offline",
+          prompt: "consent",
+        },
+      },
+    });
+    if (data) {
+      console.log("data", data);
+    }
+
+    if (error) Alert.alert(error.message);
+    console.log("error", error);
     setLoading(false);
   }
 
@@ -87,6 +107,13 @@ const SignIn = ({ navigation, screen }: any) => {
           />
         </View>
       )}
+      <View style={[styles.verticallySpaced, styles.mt20]}>
+        <Button
+          title="Google Sign In"
+          disabled={loading}
+          onPress={() => googleSignInWithExpo()}
+        />
+      </View>
     </View>
   );
 };

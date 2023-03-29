@@ -9,6 +9,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   name: "Freediving",
   version: "1.0.2",
   slug: "freediving",
+  originalFullName: "@jarielbalberona/freediving",
   description:
     "Connect with fellow freedivers, find buddies, training centers, and diving spots in the Philippines",
   orientation: "portrait",

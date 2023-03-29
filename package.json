@@ -19,6 +19,7 @@
     "@react-navigation/native-stack": "^6.1.0",
     "@react-navigation/stack": "^6.3.14",
     "@supabase/supabase-js": "^2.12.1",
+    "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
     "expo": "^48.0.4",
     "expo-asset": "~8.9.0",

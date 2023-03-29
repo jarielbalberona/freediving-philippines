@@ -1,6 +1,7 @@
 import "react-native-url-polyfill/auto";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { makeRedirectUri, startAsync } from "expo-auth-session";
 import { createClient } from "@supabase/supabase-js";
 import Constants from "expo-constants";
 
@@ -15,3 +16,21 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     detectSessionInUrl: false,
   },
 });
+
+export const googleSignInWithExpo = async () => {
+  const redirectUrl = makeRedirectUri({
+    path: "/auth/callback",
+  });
+
+  const authResponse = await startAsync({
+    authUrl: `${supabaseUrl}/auth/v1/authorize?provider=google`,
+    returnUrl: redirectUrl,
+  });
+
+  if (authResponse.type === "success") {
+    supabase.auth.setSession({
+      access_token: authResponse.params.access_token,
+      refresh_token: authResponse.params.refresh_token,
+    });
+  }
+};
