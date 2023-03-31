@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import {
   createDrawerNavigator,
   DrawerItem,
@@ -6,10 +5,12 @@ import {
   DrawerContentScrollView,
 } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
+import { supabase } from "@services/supabase";
+import { View, Text } from "react-native";
+
+import CustomDrawerList from "./custom-list";
 import BottomStack from "../bottom";
 import ProfileStackScreen from "../profile";
-import { supabase } from "../../services/supabase";
-import CustomDrawerList from "./custom-list";
 
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (

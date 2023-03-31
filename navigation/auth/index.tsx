@@ -1,8 +1,9 @@
-import { RootTabParamList } from "../../types";
-import SignIn from "../../screens/authentication/sign-in";
-import SignUp from "../../screens/authentication/sign-up";
+import Icon from "@components/icon";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "../../components/icon";
+import SignIn from "@screens/authentication/sign-in";
+import SignUp from "@screens/authentication/sign-up";
+
+import { RootTabParamList } from "../../types";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 

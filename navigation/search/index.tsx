@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Search from "../../screens/search";
-import Search2 from "../../screens/search2";
+import Search from "@screens/search";
+import Search2 from "@screens/search2";
+import { View, Text } from "react-native";
 
 const SearchStack = createStackNavigator();
 

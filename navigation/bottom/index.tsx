@@ -1,10 +1,10 @@
+import Icon from "@components/icon";
+import MapSearchStackScreen from "@navigation/map-search";
+import SearchStackScreen from "@navigation/search";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { RootTabParamList, RootTabScreenProps } from "../../types";
+import Home from "@screens/home";
 
-import Home from "../../screens/home";
-import MapSearchStackScreen from "../../navigation/map-search";
-import SearchStackScreen from "../../navigation/search";
-import Icon from "../../components/icon";
+import { RootTabParamList, RootTabScreenProps } from "../../types";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 const BottomTabNavigation = () => {

@@ -1,8 +1,11 @@
-import { Text, Alert, StyleSheet, View, Button, TextInput } from "react-native";
-
-import React, { useState, useEffect } from "react";
-import { supabase, googleSignInWithExpo } from "../../../services/supabase";
 import { useRoute } from "@react-navigation/native";
+import {
+  supabase,
+  googleSignInWithExpo,
+  facebookSignInWithExpo,
+} from "@services/supabase";
+import React, { useState, useEffect } from "react";
+import { Text, Alert, StyleSheet, View, Button, TextInput } from "react-native";
 
 const SignIn = ({ navigation, screen }: any) => {
   const route = useRoute();
@@ -18,8 +21,8 @@ const SignIn = ({ navigation, screen }: any) => {
   async function signInWithEmail() {
     setLoading(true);
     const { error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
+      email,
+      password,
     });
 
     if (error) Alert.alert(error.message);
@@ -29,11 +32,22 @@ const SignIn = ({ navigation, screen }: any) => {
   async function signUpWithEmail() {
     setLoading(true);
     const { error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
+      email,
+      password,
     });
     console.log("error", error);
     if (error) Alert.alert(error.message);
+    setLoading(false);
+  }
+
+  async function signInWithFacebook() {
+    setLoading(true);
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+    });
+    console.log("data", data);
+    if (error) Alert.alert(error.message);
+    console.log("error", error);
     setLoading(false);
   }
 
@@ -70,7 +84,7 @@ const SignIn = ({ navigation, screen }: any) => {
           />
         </View>
       ) : (
-        <View></View>
+        <View />
       )}
       <View style={styles.verticallySpaced}>
         <TextInput
@@ -112,6 +126,13 @@ const SignIn = ({ navigation, screen }: any) => {
           title="Google Sign In"
           disabled={loading}
           onPress={() => googleSignInWithExpo()}
+        />
+      </View>
+      <View style={[styles.verticallySpaced, styles.mt20]}>
+        <Button
+          title="Facebook Sign In"
+          disabled={loading}
+          onPress={() => facebookSignInWithExpo()}
         />
       </View>
     </View>

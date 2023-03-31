@@ -1,8 +1,8 @@
 import "react-native-url-polyfill/auto";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { makeRedirectUri, startAsync } from "expo-auth-session";
 import { createClient } from "@supabase/supabase-js";
+import { makeRedirectUri, startAsync } from "expo-auth-session";
 import Constants from "expo-constants";
 
 const supabaseUrl = Constants.expoConfig.extra.supabaseUrl as any;
@@ -27,6 +27,23 @@ export const googleSignInWithExpo = async () => {
     returnUrl: redirectUrl,
   });
 
+  if (authResponse.type === "success") {
+    supabase.auth.setSession({
+      access_token: authResponse.params.access_token,
+      refresh_token: authResponse.params.refresh_token,
+    });
+  }
+};
+
+export const facebookSignInWithExpo = async () => {
+  const redirectUrl = makeRedirectUri({
+    path: "/auth/callback",
+  });
+  const authResponse = await startAsync({
+    authUrl: `${supabaseUrl}/auth/v1/authorize?provider=facebook`,
+    returnUrl: redirectUrl,
+  });
+  console.log("facebook authResponse", authResponse);
   if (authResponse.type === "success") {
     supabase.auth.setSession({
       access_token: authResponse.params.access_token,

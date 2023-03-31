@@ -1,6 +1,6 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 import { Text, View, ImageBackground, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 const Highlights = () => {
   const navigation = useNavigation() as any;
   const [items, setItems] = useState([
@@ -66,7 +66,7 @@ const Highlights = () => {
     },
   ]);
   return (
-    <View className="flex flex-row flex-wrap">
+    <View className="flex flex-row flex-wrap bg-white">
       {items.map((item, index) => (
         <View key={index} className={`${item.width}`}>
           <Pressable

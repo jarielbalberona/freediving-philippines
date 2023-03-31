@@ -1,0 +1,44 @@
+[
+  {
+    "color": "#001C28",
+    "icon": "account-multiple",
+    "id": "1",
+    "name": "Buddy"
+  },
+  {
+    "color": "#FF6F62",
+    "icon": "camera-image",
+    "id": "2",
+    "name": "Photographer"
+  },
+  {
+    "color": "#CC0133",
+    "icon": "video-image",
+    "id": "3",
+    "name": "Videographer"
+  },
+  {
+    "color": "#FFA5B1",
+    "icon": "palette",
+    "id": "4",
+    "name": "Colorist"
+  },
+  {
+    "color": "#830F0E",
+    "icon": "sail-boat",
+    "id": "5",
+    "name": "Tour"
+  },
+  {
+    "color": "#80DCF0",
+    "icon": "human-male-board",
+    "id": "6",
+    "name": "Coach"
+  },
+  {
+    "color": "#245B80",
+    "icon": "human-male-board-poll",
+    "id": "7",
+    "name": "Instructor"
+  }
+]

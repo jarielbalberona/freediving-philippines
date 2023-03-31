@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import MapSearch from "../../screens/map-search";
+import MapSearch from "@screens/map-search";
+
 import BuddiesStackScreens from "../buddies";
 
 const MapSearchStack = createStackNavigator();

@@ -2,5 +2,19 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true
+  },
+  "baseUrl": "./",
+  "paths": {
+    "@assets": ["./assets"],
+    "@components": ["./components"],
+    "@constants": ["./constants"],
+    "@data": ["./data"],
+    "@features": ["./features"],
+    "@hooks": ["./hooks"],
+    "@navigation": ["./navigation"],
+    "@screens": ["./screens"],
+    "@services": ["./services"],
   }
 }
+
+

@@ -1,9 +1,9 @@
+import HorizontalGallery from "@components/horizontal-gallery";
+import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
+import { useNavigation } from "@react-navigation/native";
 import { useMemo, useEffect } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
-import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
-import HorizontalGallery from "../../components/horizontal-gallery";
 import { Rating } from "react-native-ratings";
-import { useNavigation } from "@react-navigation/native";
 
 const MapBottomSheet = ({
   bottomSheetRef,
@@ -13,10 +13,6 @@ const MapBottomSheet = ({
 }: any) => {
   const navigation = useNavigation() as any;
   const snapPoints = useMemo(() => ["48%", "78%"], []);
-
-  useEffect(() => {
-    console.log("navigation", navigation.getState());
-  }, [navigation]);
 
   return (
     <BottomSheet
@@ -50,7 +46,7 @@ const MapBottomSheet = ({
                   <Text className="ml-2">5</Text>
                 </View>
               </View>
-              <View></View>
+              <View />
             </View>
             <View className="flex w-full mt-0">
               <HorizontalGallery />
@@ -65,7 +61,7 @@ const MapBottomSheet = ({
                     key={buddy.id}
                     className="flex flex-row items-center w-auto px-4 py-2 my-1 ml-0 mr-1 rounded-full bg-slate-800 "
                   >
-                    <Text className="text-white">{buddy?.name}</Text>
+                    <Text className="text-white">{`${buddy.first_name} ${buddy.last_name}`}</Text>
                     <View className="flex flex-row items-center ml-2">
                       <Rating
                         type="star"
@@ -74,19 +70,20 @@ const MapBottomSheet = ({
                         tintColor="rgb(30, 41, 59)"
                         ratingCount={1}
                         imageSize={24}
-                        startingValue={5}
+                        startingValue={1}
                         readonly
                         onFinishRating={() => console.log("rating completed")}
                       />
-                      <Text className="text-white">4.5</Text>
+                      <Text className="text-white">{buddy.average_rating}</Text>
                     </View>
                   </View>
                 ))}
                 {item.buddies.length > 3 ? (
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("MapStack", {
-                        screen: "BuddiesStack",
+                      navigation.navigate("BuddiesStack", {
+                        screen: "Buddies",
+                        params: { spot: item },
                       });
                     }}
                     className="flex flex-row items-center w-auto px-4 py-2 my-1 ml-0 mr-1 rounded-full bg-slate-800 "
@@ -96,7 +93,7 @@ const MapBottomSheet = ({
                 ) : null}
               </View>
             </View>
-            <View className="w-full h-2 my-2 bg-slate-100"></View>
+            <View className="w-full h-2 my-2 bg-slate-100" />
           </View>
         )}
       />

@@ -3,26 +3,27 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import React, { useEffect, useState } from "react";
+import ModalScreen from "@components/modal";
 import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import NotFoundScreen from "@screens/not-found";
+import { supabase } from "@services/supabase";
+import { Session } from "@supabase/supabase-js";
+import React, { useEffect, useState } from "react";
 import { ColorSchemeName } from "react-native";
-import ModalScreen from "../components/modal";
-import NotFoundScreen from "../screens/not-found";
+
+import LinkingConfiguration from "./LinkingConfiguration";
+import AuthNavigation from "./auth";
+import DrawerScreen from "./drawer";
 import {
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
 } from "../types";
-import LinkingConfiguration from "./LinkingConfiguration";
-import DrawerScreen from "./drawer";
-import AuthNavigation from "./auth";
-import { supabase } from "../services/supabase";
-import { Session } from "@supabase/supabase-js";
 
 export default function Navigation({
   colorScheme,

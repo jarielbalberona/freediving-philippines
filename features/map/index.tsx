@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Text, Pressable, View, TextInput, ScrollView } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import MapView, { Marker } from "react-native-maps";
-import { useRoute } from "@react-navigation/native";
-import { SearchCategories } from "../../constants/categories";
-import { MapStyle } from "../../constants/map-style";
-import DiveSpots from "../../data/dive-spots.json";
-import Buddies from "../../data/buddies.json";
+import MapBottomSheet from "@components/map-bottom-sheet";
+import MapFABListView from "@components/map-fab-list-view";
+import MapFABShowAll from "@components/map-fab-show-all";
+import { SearchCategories } from "@constants/categories";
+import { MapStyle } from "@constants/map-style";
+import Buddies from "@data/buddies.json";
+import DiveSpots from "@data/dive-spots.json";
 import { Fontisto } from "@expo/vector-icons";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
-import MapFABListView from "../../components/map-fab-list-view";
-import MapFABShowAll from "../../components/map-fab-show-all";
-import MapBottomSheet from "../../components/map-bottom-sheet";
+import { useRoute } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { Text, Pressable, View, TextInput, ScrollView } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 
 const MapSearch = () => {
   const mapRef = useRef(null) as any;
@@ -33,8 +33,8 @@ const MapSearch = () => {
     );
 
     filtered_locations = DiveSpots.map((location) => {
-      let buddies = [] as any;
-      let buddied_location = {
+      const buddies = [] as any;
+      const buddied_location = {
         ...location,
       } as any;
 
@@ -105,7 +105,7 @@ const MapSearch = () => {
           latitudeDelta: 20.40915917820612,
           longitudeDelta: 10.050340779125662,
         }}
-        showsUserLocation={true}
+        showsUserLocation
         onPress={() => {
           setMapBounding();
         }}
@@ -132,9 +132,7 @@ const MapSearch = () => {
         ))}
       </MapView>
 
-      <View
-        className={`absolute z-10 flex w-full px-2 pt-4 top-10 transition ease-in-out delay-150 duration-300`}
-      >
+      <View className="absolute z-10 flex w-full px-2 pt-4 transition duration-300 ease-in-out delay-150 top-10">
         <View>
           <TextInput
             editable={false}

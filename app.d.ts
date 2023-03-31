@@ -1,2 +1,2 @@
 /// <reference types="nativewind/types" />
-declare module "@muhzi/react-native-user-avatar";
+declare module "react-native-user-avatar";

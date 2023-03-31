@@ -1,6 +1,6 @@
-import { View, Text } from "react-native"
 import { createStackNavigator } from "@react-navigation/stack";
-import { Profile } from "../../screens/profile";
+import { Profile } from "@screens/profile";
+import { View, Text } from "react-native";
 const ProfileStack = createStackNavigator();
 
 const ProfileStackScreen = () => (

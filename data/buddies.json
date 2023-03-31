@@ -1,27 +1,96 @@
 [
   {
+    "average_rating": "4.5",
+    "bio": "Lorem ipsum dolor sit, amet consectetur adipisicing elit",
+    "first_name": "Arbin",
+    "full_name": "Arbin Castillon Jr.",
     "id": "b11",
-    "name": "Arbin Castillon Jr.",
-    "services": ["Buddy", "Photographer", "Videographer", "Colorist"]
+    "last_name": "Castillon Jr.",
+    "location": {
+      "city": "Dumaguete City",
+      "province": "Negros Oriental"
+    },
+    "services": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "username": "arbincastillon"
   },
   {
+    "average_rating": "4.3",
+    "bio": "Explicabo earum a consequatur illum tenetur repudiandae harum iureo mnis",
+    "first_name": "Darb",
+    "full_name": "Darb Dan",
     "id": "b12",
-    "name": "Darb Dan",
-    "services": ["Buddy"]
+    "last_name": "Dan",
+    "location": {
+      "city": "Moalboal",
+      "province": "Cebu"
+    },
+    "services": [
+      1,
+      2
+    ],
+    "username": "darbydan"
   },
   {
+    "average_rating": "4.2",
+    "bio": "Quia dolorum nobis optio unde cumque eos, sint voluptatem et possimus nulla",
+    "first_name": "Shem",
+    "full_name": "Shem Cuaco",
     "id": "b13",
-    "name": "Shem Cuaco",
-    "services": ["Buddy", "Videographer", "Colorist"]
+    "last_name": "Cuaco",
+    "location": {
+      "city": "Panglao",
+      "province": "Bohol"
+    },
+    "services": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "username": "shemcuaco"
   },
   {
+    "average_rating": "4.9",
+    "bio": "Odit, facere! Blanditiis tenetur nam magni beatae reiciendis eius tempore",
+    "first_name": "Jariel",
+    "full_name": "Jariel Balberona",
     "id": "b14",
-    "name": "Jariel Balberona",
-    "services": ["Buddy", "Videographer", "Colorist"]
+    "last_name": "Balberona",
+    "location": {
+      "city": "Dumaguete City",
+      "province": "Negros Oriental"
+    },
+    "services": [
+      2,
+      3,
+      4
+    ],
+    "username": "jarielbalberona"
   },
   {
+    "average_rating": "4.6",
+    "bio": "Neque tenetur sit itaque esse et voluptas aliquid expedita nesciunt harum dolorum",
+    "first_name": "Harvey",
+    "full_name": "Harvey Belandres",
     "id": "b15",
-    "name": "Harvey Belandres",
-    "services": ["Buddy", "Videographer", "Colorist"]
+    "last_name": "Belandres",
+    "location": {
+      "city": "Dumaguete City",
+      "province": "Negros Oriental"
+    },
+    "services": [
+      2,
+      3,
+      6
+    ],
+    "username": "divewithharvey"
   }
 ]
