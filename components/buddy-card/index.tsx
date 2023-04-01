@@ -1,12 +1,15 @@
 import Icon from "@components/icon";
 import ServicesData from "@data/services.json";
+import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
 import { Text, View, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { Rating } from "react-native-ratings";
 
 import UserAvatar from "../avatar";
 
 const BuddyCard = ({ buddy }: any) => {
+  const navigation = useNavigation();
   const [mapped_buddy, setMappedBuddy] = useState({}) as any;
 
   useEffect(() => {
@@ -24,7 +27,14 @@ const BuddyCard = ({ buddy }: any) => {
     <View className="flex w-full p-2 overflow-hidden bg-white ">
       <View className="flex flex-row items-center mx-1 my-2">
         <View className="flex-1">
-          <View className="flex flex-row">
+          <TouchableOpacity
+            className="flex flex-row"
+            onPress={() =>
+              navigation.navigate("Buddy", {
+                user_id: mapped_buddy.id,
+              })
+            }
+          >
             <View className="w-10 h-12">
               <UserAvatar user={mapped_buddy} is_with_details={false} />
             </View>
@@ -46,7 +56,7 @@ const BuddyCard = ({ buddy }: any) => {
                 <Text className="ml-2">{mapped_buddy.average_rating}</Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
         <View className="flex-row flex-none ">
           <View className="w-12">

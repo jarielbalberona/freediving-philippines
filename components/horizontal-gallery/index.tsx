@@ -1,5 +1,6 @@
+import CachedImage from "expo-cached-image";
 import React, { useState, useEffect } from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 const HorizontalGallery = ({ navigation }: any) => {
   const [items, setItems] = useState([
@@ -54,16 +55,22 @@ const HorizontalGallery = ({ navigation }: any) => {
       <FlatList
         data={items}
         horizontal
-        scrollEnabled={true}
+        scrollEnabled
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }: any) => (
           <View className="m-2">
-            <Image
+            <CachedImage
               className="w-36 h-36"
               source={{
                 uri: item.image,
               }}
+              cacheKey={`${item.id}-thumb`}
+              placeholderContent={
+                <View>
+                  <Text>Loading image...</Text>
+                </View>
+              }
             />
           </View>
         )}

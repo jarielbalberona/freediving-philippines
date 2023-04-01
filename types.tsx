@@ -33,6 +33,7 @@ export type RootTabParamList = {
   Profile: undefined;
   MapStack: undefined;
   Buddies: undefined;
+  Buddy: undefined;
   SearchStack: undefined;
   Search: undefined;
   Search2: undefined;

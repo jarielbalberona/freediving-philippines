@@ -5,7 +5,7 @@ const Highlights = () => {
   const navigation = useNavigation() as any;
   const [items, setItems] = useState([
     {
-      name: "Dive spots",
+      name: "Dive Spots",
       description_short: "Explore the oceans",
       image:
         "https://s3.ap-southeast-1.amazonaws.com/freediving-philippines-assets/images/uwu/uwu-1.jpg",
